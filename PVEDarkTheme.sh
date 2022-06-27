@@ -150,7 +150,16 @@ function install {
         exit 2
     else
         if [ "$_silent" = false ]; then checkSupported; fi
-
+	
+	if [ "$_silent" = false ]; then
+	echo -e " "
+        echo -e  "______     _______ ____             _    _____ _"                         
+	echo -e "|  _ \ \   / / ____|  _ \  __ _ _ __| | _|_   _| |__   ___ _ __ ___   ___ "
+	echo -e "| |_) \ \ / /|  _| | | | |/ _` | '__| |/ / | | | '_ \ / _ \ '_ ` _ \ / _ \"
+	echo -e "|  __/ \ V / | |___| |_| | (_| | |  |   <  | | | | | |  __/ | | | | |  __/"
+ 	echo -e "|_|     \_/  |_____|____/ \__,_|_|  |_|\_\ |_| |_| |_|\___|_| |_| |_|\___|"
+        echo -e " "                                                                
+    fi
         if [ "$_silent" = false ]; then echo -e "${CHECKMARK} Sauvegarde du fichier de template"; fi
         cp $TEMPLATE_FILE $TEMPLATE_FILE.bak
 
