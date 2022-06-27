@@ -1,7 +1,10 @@
 
 <p align="center">THEME EN COURS DE DEVELOPPEMENT</p>
 
-
+___  _  _ ____ ___  ____ ____ _  _ ___ _  _ ____ _  _ ____ 
+|__] |  | |___ |  \ |__| |__/ |_/   |  |__| |___ |\/| |___ 
+|     \/  |___ |__/ |  | |  \ | \_  |  |  | |___ |  | |___ 
+                                                           
 ![](https://i.imgur.com/SnlCyHF.png)
 
 <p align="center">Dark theme for Proxmox web GUI,<br/> <i>Forked from PVEDiscordDark by Weilbyte</i></p>
