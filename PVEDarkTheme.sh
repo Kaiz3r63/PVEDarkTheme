@@ -215,6 +215,13 @@ function uninstall {
         echo -e "${RED}Theme non installé${REG}"
         exit 2
     else
+    if [ "$_silent" = false ]; then
+	echo -e " "
+        echo -e "___  _  _ ____ ___  ____ ____ _  _ ___ _  _ ____ _  _ ____" 
+	echo -e "|__] |  | |___ |  \ |__| |__/ |_/   |  |__| |___ |\/| |___" 
+	echo -e "|     \/  |___ |__/ |  | |  \ | \_  |  |  | |___ |  | |___"                                                           
+        echo -e " "                                                                
+    fi
         if [ "$_silent" = false ]; then echo -e "${CHECKMARK} Suppression de la feuille de style"; fi
         rm /usr/share/pve-manager/css/dd_style.css
 
