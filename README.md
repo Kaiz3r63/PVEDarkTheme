@@ -13,14 +13,23 @@ Executez simplement dans le shell de votre node, la ligne suivante :
 bash <(curl -s https://raw.githubusercontent.com/Kaiz3r63/PVEDarkTheme/master/PVEDarkTheme.sh ) install
 ```
 
-
-## Uninstallation
+## Désinstallation
 Executez simplement dans le shell de votre node, la ligne suivante :
 ```
-bash <(curl -s bash <(curl -s https://raw.githubusercontent.com/Kaiz3r63/PVEDarkTheme/master/PVEDarkTheme.sh ) uninstall
+bash <(curl -s https://raw.githubusercontent.com/Kaiz3r63/PVEDarkTheme/master/PVEDarkTheme.sh ) uninstall
 ``` 
-## Installer & Security
-The new installer relies on the `/meta/supported` and `/meta/imagelist` files being present in the repository. It also includes a silent mode. Run `bash PVEDiscordDark.sh -h` for usage instructions. 
+
+## Mise a jour (Commande qui execute une Désinstallation, suivie d'une Installation)
+Executez simplement dans le shell de votre node, la ligne suivante :
+```
+bash <(curl -s https://raw.githubusercontent.com/Kaiz3r63/PVEDarkTheme/master/PVEDarkTheme.sh ) update
+```   
+  
+## Connaitre le status (Savoir si PVEDarkTheme est installé ou non)
+Executez simplement dans le shell de votre node, la ligne suivante :
+```
+bash <(curl -s https://raw.githubusercontent.com/Kaiz3r63/PVEDarkTheme/master/PVEDarkTheme.sh ) status
+``` 
 
 Furthermore, you will be able to provide the environment variables `REPO` and `TAG` to specify from what repository and from what commit tag to install the theme from.   
 `REPO` is in format `Username/Repository` and defaults to `Weilbyte/PVEDiscordDark` (this repository).    
