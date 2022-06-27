@@ -1,7 +1,7 @@
 
 <p align="center">THEME EN COURS DE DEVELOPPEMENT</p>
                                                            
-![](https://i.imgur.com/SnlCyHF.png)
+![](https://raw.githubusercontent.com/Kaiz3r63/PVEDarkTheme/master/screen%20capture%20install.png)
 
 <p align="center">Dark theme for Proxmox web GUI,<br/> <i>Forked from PVEDiscordDark by Weilbyte</i></p>
 
