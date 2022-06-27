@@ -73,4 +73,4 @@ patchBackupConfig();
 patchDiskSmartWindow();
 patchTFAEdit();
 patchCreateWidget();
-console.log('PVEDiscordDark :: Patched');
+console.log('PVEDarkTheme :: Patched');
