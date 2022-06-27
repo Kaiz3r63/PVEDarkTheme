@@ -1,5 +1,6 @@
 #!/bin/bash
-# https://github.com/Weilbyte/PVEDiscordDark
+# Code basé sur la version PVEDIscordDark de Weilbyte - https://github.com/Weilbyte/PVEDiscordDark
+# Fork pour adapté a mes gouts et traduction :)
 
 umask 022
 
@@ -18,7 +19,7 @@ SCRIPTPATH="${SCRIPTDIR}$(basename "${BASH_SOURCE[0]}")"
 
 OFFLINEDIR="${SCRIPTDIR}offline"
 
-REPO=${REPO:-"Weilbyte/PVEDiscordDark"}
+REPO=${REPO:-"Kaiz3r63/ProxmoxDark"}
 DEFAULT_TAG="master"
 TAG=${TAG:-$DEFAULT_TAG}
 BASE_URL="https://raw.githubusercontent.com/$REPO/$TAG"
@@ -28,39 +29,39 @@ OFFLINE=false
 
 #region Prerun checks
 if [[ $EUID -ne 0 ]]; then
-    echo -e >&2 "${BRED}Root privileges are required to perform this operation${REG}";
+    echo -e >&2 "${BRED}Les privilèges root sont nécéssaires pour effectuer cette opération${REG}";
     exit 1
 fi
 
 hash sed 2>/dev/null || { 
-    echo -e >&2 "${BRED}sed is required but missing from your system${REG}";
+    echo -e >&2 "${BRED}sed est requis, mais il est absent de votre système${REG}";
     exit 1;
 }
 
 hash pveversion 2>/dev/null || { 
-    echo -e >&2 "${BRED}PVE installation required but missing from your system${REG}";
+    echo -e >&2 "${BRED}Une installation PVE est requise pour effectuer cette opération${REG}";
     exit 1;
 }
 
 if test -d "$OFFLINEDIR"; then
-    echo "Offline directory detected, entering offline mode."
+    echo "Repertoire Offline détecté, passage en mode Offline"
     OFFLINE=true
 else
     hash curl 2>/dev/null || { 
-        echo -e >&2 "${BRED}cURL is required but missing from your system${REG}";
+        echo -e >&2 "${BRED}cURL est requis, mais il est absent de votre système${REG}";
         exit 1;
     }
 fi
 
 if [ "$OFFLINE" = false ]; then
     curl -sSf -f https://github.com/robots.txt &> /dev/null || {
-        echo -e >&2 "${BRED}Could not establish a connection to GitHub (github.com)${REG}";
+        echo -e >&2 "${BRED}Impossible d'établir une connexion avec GitHub (github.com)${REG}";
         exit 1;
     }
 
     if [ $TAG != $DEFAULT_TAG ]; then
         if !([[ $TAG =~ [0-9] ]] && [ ${#TAG} -ge 7 ] && (! [[ $TAG =~ ['!@#$%^&*()_+.'] ]]) ); then 
-            echo -e "${WARN}It appears like you are using a non-default tag. For security purposes, please use the SHA-1 hash of said tag instead${REG}"
+            echo -e "${WARN}Il semble que vous utilisiez une balise autre que celle par défaut. Pour des raisons de sécurité, veuillez utiliser le hachage SHA-1 de ladite balise à la place${REG}"
         fi
     fi
 fi
@@ -79,15 +80,15 @@ function checkSupported {
 
     if [ -z "$SUPPORTED" ]; then 
         if [ "$OFFLINE" = false ]; then
-            echo -e "${WARN}Could not reach supported version file ($BASE_URL/meta/supported). Skipping support check.${REG}"
+            echo -e "${WARN}Impossible d'atteindre le fichier de version pris en charge ($BASE_URL/meta/supported). Vérification de support ignorée.${REG}"
         else
-            echo -e "${WARN}Could not find supported version file ($OFFLINEDIR/meta/supported). Skipping support check.${REG}"
+            echo -e "${WARN}Impossible d'atteindre le fichier de version pris en charge ($OFFLINEDIR/meta/supported). Vérification de support ignorée.${REG}"
         fi
     else 
         local SUPPORTEDARR=($(echo "$SUPPORTED" | tr ',' '\n'))
         if ! (printf '%s\n' "${SUPPORTEDARR[@]}" | grep -q -P "$PVEVersionMajor"); then
-            echo -e "${WARN}You might encounter issues because your version ($PVEVersionMajor) is not matching currently supported versions ($SUPPORTED)."
-            echo -e "If you do run into any issues on >newer< versions, please consider opening an issue at https://github.com/Weilbyte/PVEDiscordDark/issues.${REG}"
+            echo -e "${WARN}Vous risquez de rencontrer des problèmes car votre version ($PVEVersionMajor) ne correspont pas aux versions supportées ($SUPPORTED)."
+            echo -e "Si vous rencontrez des problèmes sur les versions >newer<, vous pouvez ouvrir un incident a l'adresse https://github.com/Weilbyte/PVEDiscordDark/issues.${REG}"
         fi
     fi
 }
@@ -107,20 +108,20 @@ function isInstalled {
 #region Main functions
 function usage {
     if [ "$_silent" = false ]; then
-        echo -e "Usage: $0 [OPTIONS...] {COMMAND}\n"
-        echo -e "Manages the PVEDiscordDark theme."
-        echo -e "  -h --help            Show this help"
-        echo -e "  -s --silent          Silent mode\n"
-        echo -e "Commands:"
-        echo -e "  status               Check current theme status (returns 0 if installed, and 1 if not installed)"
-        echo -e "  install              Install the theme"
-        echo -e "  uninstall            Uninstall the theme"
-        echo -e "  update               Update the theme (runs uninstall, then install)"
+        echo -e "Utilisation: $0 [OPTIONS...] {COMMAND}\n"
+        echo -e "Pour gérer le theme ProxmoxDark."
+        echo -e "  -h --help            Afficher cette aide"
+        echo -e "  -s --silent          Mode silencieux \n"
+        echo -e "Commandes:"
+        echo -e "  status               Check l'état du thème (0 si installé, and 1 si non installé)"
+        echo -e "  install              Installe le thème"
+        echo -e "  uninstall            Désinstalle le thème"
+        echo -e "  update               Met a jour le thème (Va executer uninstall, puis install)"
     #    echo -e "  utility-update       Update this utility\n" (to be implemented)
-        echo -e "Exit status:"
+        echo -e "Exit codes:"
         echo -e "  0                    OK"
-        echo -e "  1                    Failure"
-        echo -e "  2                    Already installed, OR not installed (when using install/uninstall commands)\n"
+        echo -e "  1                    Erreur"
+        echo -e "  2                    Déja installé, ou non installé (si utilisé install/uninstall)\n"
         echo -e "Report issues at: <https://github.com/Weilbyte/PVEDiscordDark/issues>"
     fi
 }
