@@ -8,21 +8,17 @@
 <p align="center">Fully dark theme, include graphs and context menus.
 
 ## Installation 
-The installation is done via the CLI utility. Run the following commands on the PVE node serving the Web UI:
-
-```
-~# wget https://raw.githubusercontent.com/Kaiz3r63/PVEDarkTheme/master/PVEDarkTheme.sh
-~# bash PVEDarkTheme.sh install
-```
-Or this oneliner
+Executez simplement dans le shell de votre node, la ligne suivante :
 ```
 bash <(curl -s https://raw.githubusercontent.com/Kaiz3r63/PVEDarkTheme/master/PVEDarkTheme.sh ) install
 ```
 
 
 ## Uninstallation
- To uninstall the theme, simply run the utility with the `uninstall` command.
- 
+Executez simplement dans le shell de votre node, la ligne suivante :
+```
+bash <(curl -s bash <(curl -s https://raw.githubusercontent.com/Kaiz3r63/PVEDarkTheme/master/PVEDarkTheme.sh ) uninstall
+``` 
 ## Installer & Security
 The new installer relies on the `/meta/supported` and `/meta/imagelist` files being present in the repository. It also includes a silent mode. Run `bash PVEDiscordDark.sh -h` for usage instructions. 
 
