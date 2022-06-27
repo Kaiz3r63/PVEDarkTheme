@@ -1,5 +1,5 @@
 #!/bin/bash
-# Code basé sur la version PVEDIscordDark de Weilbyte - https://github.com/Weilbyte/PVEDiscordDark
+# Code basé sur la version PVEDiscordDark de Weilbyte - https://github.com/Weilbyte/PVEDiscordDark
 # Fork pour adapté a mes gouts et traduction :)
 
 umask 022
@@ -164,16 +164,16 @@ function install {
         if [ "$_silent" = false ]; then echo -e "${CHECKMARK} Téléchargement de la feuille de style"; fi
 
         if [ "$OFFLINE" = false ]; then
-            curl -s $BASE_URL/PVEDiscordDark/sass/PVEDiscordDark.css > /usr/share/pve-manager/css/dd_style.css
+            curl -s $BASE_URL/PVEDarkTheme/sass/PVEDarkTheme.css > /usr/share/pve-manager/css/dd_style.css
         else
-            cp "$OFFLINEDIR/PVEDiscordDark/sass/PVEDiscordDark.css" /usr/share/pve-manager/css/dd_style.css
+            cp "$OFFLINEDIR/PVEDarkTheme/sass/PVEDarkTheme.css" /usr/share/pve-manager/css/dd_style.css
         fi
 
         if [ "$_silent" = false ]; then echo -e "${CHECKMARK} Téléchargement du patcher"; fi
         if [ "$OFFLINE" = false ]; then
-            curl -s $BASE_URL/PVEDiscordDark/js/PVEDiscordDark.js > /usr/share/pve-manager/js/dd_patcher.js
+            curl -s $BASE_URL/PVEDarkTheme/js/PVEDarkTheme.js > /usr/share/pve-manager/js/dd_patcher.js
         else
-            cp "$OFFLINEDIR/PVEDiscordDark/js/PVEDiscordDark.js" /usr/share/pve-manager/js/dd_patcher.js
+            cp "$OFFLINEDIR/PVEDarkTheme/js/PVEDarkTheme.js" /usr/share/pve-manager/js/dd_patcher.js
         fi
 
         if [ "$_silent" = false ]; then echo -e "${CHECKMARK} Application des changements au fichier de template"; fi
@@ -196,9 +196,9 @@ function install {
         for image in "${IMAGELISTARR[@]}"
         do
                 if [ "$OFFLINE" = false ]; then
-                    curl -s $BASE_URL/PVEDiscordDark/images/$image > /usr/share/pve-manager/images/$image
+                    curl -s $BASE_URL/PVEDarkTheme/images/$image > /usr/share/pve-manager/images/$image
                 else
-                    cp "$OFFLINEDIR/PVEDiscordDark/images/$image" /usr/share/pve-manager/images/$image
+                    cp "$OFFLINEDIR/PVEDarkTheme/images/$image" /usr/share/pve-manager/images/$image
                 fi
                 ((ITER++))
                 if [ "$_silent" = false ]; then echo -e "\e[1A\e[KTéléchargement des images ($ITER/${#IMAGELISTARR[@]})"; fi
