@@ -152,7 +152,7 @@ function install {
         if [ "$_silent" = false ]; then checkSupported; fi
 	
 	if [ "$_silent" = false ]; then
-	echo -e " "
+	echo -e "--- "
         echo -e "___  _  _ ____ ___  ____ ____ _  _ ___ _  _ ____ _  _ ____" 
 	echo -e "|__] |  | |___ |  \ |__| |__/ |_/   |  |__| |___ |\/| |___" 
 	echo -e "|     \/  |___ |__/ |  | |  \ | \_  |  |  | |___ |  | |___"                                                           
