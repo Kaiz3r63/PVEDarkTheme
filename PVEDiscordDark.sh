@@ -19,7 +19,7 @@ SCRIPTPATH="${SCRIPTDIR}$(basename "${BASH_SOURCE[0]}")"
 
 OFFLINEDIR="${SCRIPTDIR}offline"
 
-REPO=${REPO:-"Kaiz3r63/ProxmoxDark"}
+REPO=${REPO:-"Kaiz3r63/PVEDarkTheme"}
 DEFAULT_TAG="master"
 TAG=${TAG:-$DEFAULT_TAG}
 BASE_URL="https://raw.githubusercontent.com/$REPO/$TAG"
@@ -109,7 +109,7 @@ function isInstalled {
 function usage {
     if [ "$_silent" = false ]; then
         echo -e "Utilisation: $0 [OPTIONS...] {COMMAND}\n"
-        echo -e "Pour gérer le theme ProxmoxDark."
+        echo -e "Pour gérer le theme PVEDarkTheme."
         echo -e "  -h --help            Afficher cette aide"
         echo -e "  -s --silent          Mode silencieux \n"
         echo -e "Commandes:"
