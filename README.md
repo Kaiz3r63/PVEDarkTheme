@@ -4,21 +4,20 @@
 
 ![](https://i.imgur.com/SnlCyHF.png)
 
-<p align="center">A dark theme for the Proxmox Web UI,<br/> <i>Forké depuis le thème PVEDiscordDark de Weilbyte</i></p>
+<p align="center">Dark theme for Proxmox web GUI,<br/> <i>Forked from PVEDiscordDark by Weilbyte</i></p>
 
-<p align="center">Everything is dark, including the graphs, context menus and all in between! Eyes need not be fried.</p>    
-The theme now runs its own JavaScript code which patches the colors for certain components (and charts). This approach is much better, and safer than what was used previously.
+<p align="center">Fully dark theme, include graphs and context menus.
 
 ## Installation 
 The installation is done via the CLI utility. Run the following commands on the PVE node serving the Web UI:
 
 ```
-~# wget https://raw.githubusercontent.com/Weilbyte/PVEDiscordDark/master/PVEDiscordDark.sh
-~# bash PVEDiscordDark.sh install
+~# wget https://raw.githubusercontent.com/Kaiz3r63/PVEDarkTheme/master/PVEDarkTheme.sh
+~# bash PVEDarkTheme.sh install
 ```
 Or this oneliner
 ```
-bash <(curl -s https://raw.githubusercontent.com/Weilbyte/PVEDiscordDark/master/PVEDiscordDark.sh ) install
+bash <(curl -s https://raw.githubusercontent.com/Kaiz3r63/PVEDarkTheme/master/PVEDarkTheme.sh ) install
 ```
 
 
