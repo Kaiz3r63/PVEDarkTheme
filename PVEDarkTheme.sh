@@ -162,7 +162,7 @@ function install {
             cp "$OFFLINEDIR/PVEDiscordDark/sass/PVEDiscordDark.css" /usr/share/pve-manager/css/dd_style.css
         fi
 
-        if [ "$_silent" = false ]; then echo -e "${CHECKMARK} Downloading patcher"; fi
+        if [ "$_silent" = false ]; then echo -e "${CHECKMARK} Téléchargement du patcher"; fi
         if [ "$OFFLINE" = false ]; then
             curl -s $BASE_URL/PVEDiscordDark/js/PVEDiscordDark.js > /usr/share/pve-manager/js/dd_patcher.js
         else
@@ -198,7 +198,7 @@ function install {
         done
         if [ "$_silent" = false ]; then echo -e "\e[1A\e[K${CHECKMARK} Téléchargement des images (${#IMAGELISTARR[@]}/${#IMAGELISTARR[@]})"; fi
 
-        if [ "$_silent" = false ]; then echo -e "Thème installé :-)."; fi
+        if [ "$_silent" = false ]; then echo -e "Thème installé - Veuillez raffraichir la page pour en profiter :-) "; fi
         if [ "$_noexit" = false ]; then exit 0; fi
     fi
 }
@@ -221,7 +221,7 @@ function uninstall {
         if [ "$_silent" = false ]; then echo -e "${CHECKMARK} Suppression des images"; fi
         rm /usr/share/pve-manager/images/dd_*
 
-        if [ "$_silent" = false ]; then echo -e "Thème désintallé :-(."; fi
+        if [ "$_silent" = false ]; then echo -e "Thème désintallé - Veuillez raffraichir la page pour en profiter :-) "; fi
         if [ "$_noexit" = false ]; then exit 0; fi
     fi
 }
