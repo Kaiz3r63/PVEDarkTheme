@@ -1,9 +1,5 @@
 
-<p align="center">THEME EN COURS DE DEVELOPPEMENT</p><br/>
-<br/>
-___  _  _ ____ ___  ____ ____ _  _ ___ _  _ ____ _  _ ____ <br/>
-|__] |  | |___ |  \ |__| |__/ |_/   |  |__| |___ |\/| |___ <br/>
-|     \/  |___ |__/ |  | |  \ | \_  |  |  | |___ |  | |___ <br/><br/>
+<p align="center">THEME EN COURS DE DEVELOPPEMENT</p>
                                                            
 ![](https://i.imgur.com/SnlCyHF.png)
 
