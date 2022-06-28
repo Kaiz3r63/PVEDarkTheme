@@ -1,3 +1,2 @@
-.x-grid-cell-inner
-	background: transparent
-	color: #fff
+.x-legend-item-marker
+	color: #eb7518
