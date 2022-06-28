@@ -1,5 +1,5 @@
 
-<p align="center">EN COURS DE DEVELOPPEMENT / CURENTLY IN DEV</p>
+<p align="center">EN COURS DE DEVELOPPEMENT / CURRENTLY IN DEV</p>
 <p align="center">IL N'EST PAS CONSEILLE D'UTILISER CE THEME / DO NOT USE THIS THEME</p>
                                                            
 ![](https://raw.githubusercontent.com/Kaiz3r63/PVEDarkTheme/master/screen%20capture%20install.png)
