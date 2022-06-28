@@ -4,7 +4,7 @@
                                                            
 ![](https://raw.githubusercontent.com/Kaiz3r63/PVEDarkTheme/master/screen%20capture%20install.png)
 
-<p align="center">Dark theme for Proxmox web GUI,<br/> <i>forked from Weilbyte/PVEDiscordDark</i></p>
+<p align="center">Custom Dark theme for Proxmox web GUI,<br/> <i>forked from Weilbyte/PVEDiscordDark</i></p>
 
 <p align="center">Fully dark theme, include graphs and context menus.
 
